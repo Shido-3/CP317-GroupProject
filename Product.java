@@ -23,4 +23,28 @@ public class Product {
 		+ ", " + productStatus + ", " + supplierID);
     }
     
+    public String getPID() {
+	return productID;
+    }
+    
+    public String getProductName() {
+	return productName;
+    }
+    
+    public float getProductPrice() {
+	return productPrice;
+    }
+    
+    public int getProductQuantity() {
+	return productQuantity;
+    }
+    
+    public char getProductStatus() {
+	return productStatus;
+    }
+    
+    public String getSID() {
+	return supplierID;
+    }
+    
 }

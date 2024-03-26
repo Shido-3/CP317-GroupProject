@@ -27,19 +27,17 @@ public class Main {
             else {
         	
                 ProductFileReader productFile = new ProductFileReader(productFilepath.getAbsolutePath());
+                SupplierFileReader supplierFile = new SupplierFileReader(supplierFilepath.getAbsolutePath());
+                
                 try {
                 	productFile.readFile();
                 	ArrayList<Product> products = productFile.getProducts();
-                }
-                catch (IllegalArgumentException e) {
-            		System.out.println(e.getMessage());
-                }
                 
-                SupplierFileReader supplierFile = new SupplierFileReader(supplierFilepath.getAbsolutePath());
-                try {
                 	supplierFile.readFile();
                 	ArrayList<Supplier> suppliers = supplierFile.getProducts();
-                }
+                	
+                	InventoryFileWriter.writeInventoryFile(products, suppliers);
+                }	
                 catch (IllegalArgumentException e) {
             		System.out.println(e.getMessage());	
                 }

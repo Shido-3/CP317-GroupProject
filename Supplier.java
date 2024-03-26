@@ -14,4 +14,11 @@ public class Supplier {
 	System.out.println(supplierID + ", " + supplierName);
     }
     
+    public String getSID() {
+	return supplierID;
+    }
+    
+    public String getSupplierName() {
+	return supplierName;
+    }
 }
