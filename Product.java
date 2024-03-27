@@ -17,11 +17,6 @@ public class Product {
 	productStatus = pStatus;
 	supplierID = sID;
     }
-   
-    public void getTest() {
-	System.out.println(productID + ", " + productName + ", " + productPrice + ", " + productQuantity 
-		+ ", " + productStatus + ", " + supplierID);
-    }
     
     public String getPID() {
 	return productID;

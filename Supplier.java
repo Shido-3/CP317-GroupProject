@@ -9,10 +9,6 @@ public class Supplier {
 	supplierID = sID;
 	supplierName = sName;
     }
-   
-    public void getTest() {
-	System.out.println(supplierID + ", " + supplierName);
-    }
     
     public String getSID() {
 	return supplierID;

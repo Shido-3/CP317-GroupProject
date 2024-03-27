@@ -12,6 +12,7 @@ public class FileReader {
 	this.filePath = filePath;
     }
     
+    // Public method to open a file for reading, returns a scanner object, used by inherited classes
     public Scanner openFile() {
 	
 	File file = new File(filePath);
