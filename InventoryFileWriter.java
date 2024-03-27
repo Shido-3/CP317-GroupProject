@@ -1,5 +1,6 @@
 package source;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -63,10 +64,20 @@ public class InventoryFileWriter {
 		//closes the writer
 		pw.close();
 		
+		//open output file
+		Desktop openFile = Desktop.getDesktop();
+		
+		try {
+		    openFile.open(inventoryFile);
+		}
+		catch (Exception e) {
+		    System.out.println("Error: Cannot Open InventoryFile.txt");
+		}
+		
 	    }
 	    //tells user when a product Supplier ID does not exist in the Supplier File
 	    catch (Exception e) {
-		System.out.println("Error: product on line " + i + " supplier ID doe not exist in SupplierFile.txt");
+		System.out.println("Error: product on line " + i + " supplier ID does not exist in SupplierFile.txt");
 	    }
 	    
 	}

@@ -25,8 +25,8 @@ public class Main {
             
             //checks if both input files have the correct name and file type
             if(!productFilepath.getName().matches("ProductFile.txt") || !supplierFilepath.getName().matches("SupplierFile.txt")) {
-        	System.out.println("Names of input file(s) or file type are incorrect");
-        	System.out.println("Stopping Program...");
+        	System.out.println("ERROR: Names of input file(s) or file type are incorrect");
+        	System.out.println("Exiting Program...");
             }
             else {
         	
@@ -43,21 +43,22 @@ public class Main {
                 	//calls readFile to get data from supplier file
                 	supplierFile.readFile();
                 	//get the list of supplier objects created by readFile method
-                	ArrayList<Supplier> suppliers = supplierFile.getProducts();
+                	ArrayList<Supplier> suppliers = supplierFile.getSuppliers();
                 	
                 	//calls writeInventoryFile with list of products and suppliers to write formatted output to InventoryFile.txt
                 	InventoryFileWriter.writeInventoryFile(products, suppliers);
                 }	
                 //catches exception and error messages from readFile method
                 catch (IllegalArgumentException e) {
-            		System.out.println(e.getMessage());	
+            		System.out.println(e.getMessage());
+            		System.out.println("Exiting Program...");
                 }
             }
         } 
         else {
             //if user cancels any file selection the program stops
-            System.out.println("Input file(s) not selected");
-            System.out.println("Stopping Program...");
+            System.out.println("ERROR: Input file(s) not selected");
+            System.out.println("Exiting Program...");
         }
     }
 

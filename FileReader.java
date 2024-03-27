@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class FileReader {
     
-    protected String filePath;
+    private String filePath;
     
     public FileReader(String filePath) {
 	this.filePath = filePath;
@@ -24,7 +24,8 @@ public class FileReader {
 	    source = new Scanner(file);
 	}
 	catch (FileNotFoundException e) {
-	    System.out.println("Error opening file");
+	    System.out.println("ERROR: Cannot open file");
+	    System.out.println("Exiting Program...");
 	}
 	
 	return source;
